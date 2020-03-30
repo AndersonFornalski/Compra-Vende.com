@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+<!-- MATERIAL DESIGN CSS -->
+<link
+	href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css"
+	rel="stylesheet">
+<script
+	src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+
+<!-- MATERIAL DESIGN ICONES -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+
+<link rel="stylesheet" href="../css/telaDetalhe.css">
+
+<script src="..../js/detalhes.js"></script>
+
+<title>Carros</title>
+</head>
+<body>
+
+
+
+	<br />
+	<br />
+
+
+	<div class="container" th:each="detail : ${Detalhes}">
+		<div class="row">
+
+			<div class="w-100"></div>
+			<div class="col-md-7">
+
+				<div class="container">
+					<div class="fotosss">
+						<div class="main-img">
+							<img th:src="|/imagem/${Detalhes.id}|" id="current">
+						</div>
+
+						<div class="imgs">
+							<img th:src="|/imagem/${Detalhes.id}|"> 
+						    <img th:src="|/imagem2/${Detalhes.id}|"> 
+							<img th:src="|/imagem3/${Detalhes.id}|">
+							<img th:src="|/imagem4/${Detalhes.id}|">
+						</div>
+						
+					</div>
+					
+				</div> <br/><br/>
+				
+				<div class="descricao">
+					<div class="col">
+						<label> Descrição</label>
+						 <h5><span th:text="${detail.descricao}"></span></h5>						
+					</div>
+				</div>
+				
+				<br/>
+				
+				<div class="row">
+					<div class="col">
+						<h3>Celular</h3>
+						<span th:text="${detail.celular}"></span>
+					</div>
+					
+					<div class="col">
+						<h3>Fixo</h3>
+						<span th:text="${detail.fixo}"></span>
+					</div>									
+				</div>
+
+			</div>
+
+							
+			
+
+			<div class="col-md-4" th:each="detail : ${Detalhes}">
+
+					<div class="col">
+						<h1 class="h1Preco"> 
+						<strong> R$ <span th:text="${detail.preco}"></span></strong>
+						</h1>
+					</div>
+					
+					<br/><br/>
+					
+					
+				<div class="dadosVeiculo">	
+					<div class="col">
+						<label> Marca</label>
+						<h3>
+							<span th:text="${detail.marca}"></span>
+						</h3>
+					</div>
+					
+					<div class="col">
+						<label> Modelo</label>
+						<h4>
+							<span th:text="${detail.modelo}"></span>
+						</h4>
+					</div>
+					
+					<div class="col">
+						<label> Ano</label>
+						<h4>
+							<span th:text="${detail.ano}"></span>
+						</h4>
+					</div>
+					
+					<div class="col">
+						<label> Km</label>
+						<h4>
+							<span th:text="${detail.kilometragem}"></span>
+						</h4>
+					</div>
+					
+					<div class="col">
+						<h4>
+							<span th:text="${detail.titulo}"></span>
+						</h4>
+					</div>
+					
+					<hr/>
+				</div>
+				</div>	
+				</div>
+				</div>
+				
+				<br/><br/><br/><br/><br/>
+	
+
+
+
+
+
+			<!-- Optional JavaScript -->
+			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+				integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+				crossorigin="anonymous"></script>
+			<script
+				src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+				integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+				crossorigin="anonymous"></script>
+			<script
+				src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+				integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+				crossorigin="anonymous"></script>
+			
+			
+				
+			<script>	
+
+				const current = document.querySelector('#current');
+				const imgs = document.querySelector('.imgs');
+				const img = document.querySelectorAll('.imgs img');
+				const opacity = 0.6;
+				
+				img[0].style.opacity = opacity;
+			
+				imgs.addEventListener('click', imgClick);
+			
+				function imgClick(e) {	  
+				  img.forEach(img => (img.style.opacity = 1));
+				  current.src = e.target.src;
+				  current.classList.add('fade-in');
+				  setTimeout(() => current.classList.remove('fade-in'), 500);
+				  e.target.style.opacity = opacity;
+				}
+			</script>
+</body>
+</html>

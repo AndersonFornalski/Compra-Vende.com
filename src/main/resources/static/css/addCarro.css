@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+body{
+	background:url("/ferraripng.png")no-repeat;
+	background-size: cover;
+}
+form{
+	width:300;
+	margin:auto;
+	color:black;
+	margin-top:50px;
+}
+
+.navbar{
+	background-color: #5F04B4;	
+}
+
+.navbar-brand{
+	color: white;
+}
+.navbar-brand:hover{
+	color: black;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

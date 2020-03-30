@@ -1,0 +1,109 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;	
+	background-color: gray;
+	color: white;
+}
+
+h2{
+}
+
+section{
+	position: absolute;
+	width: 100%;
+	height:100vh;
+	display: flex;
+	
+}
+
+section .slider{
+	position: relative;
+	height: 90%;
+	flex: 3;
+	border-right: 1px solid white; 
+	overflow: hidden;
+	transition: 0.2s ease-in-out;	
+}
+
+section .slider:last-child{
+	border-right: none;
+}
+
+section .slider:hover{
+	flex-grow: 5;
+}
+section .slider:hover .content{
+	visibility: visible;
+	opacity: 1;
+	transition: 0.5s;
+	transform: translateY(0);
+	transition-delay: 0.3s;
+}
+
+
+.navbar{
+	background-color: #5F04B4;	
+}
+.navbar-brand{
+	color: white;
+	size: 30%;
+}
+.navbar-brand:hover{
+	color: black;
+}
+.nav-link{
+	color: white;
+}
+.nav-link:hover{
+	color: black;
+}
+.navbar-toggler{
+	background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
